@@ -1,0 +1,38 @@
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #222;
+}
+
+.content_container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: scale 0.1s;
+  font-size: 2.5rem;
+}
+
+.title:hover {
+  scale: 1.2;
+}
+
+.shopping_cart_icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(5%) saturate(21%)
+    hue-rotate(132deg) brightness(103%) contrast(107%);
+  cursor: pointer;
+  transition: scale 0.1s;
+}
+
+.shopping_cart_icon:hover {
+  scale: 1.2;
+}
