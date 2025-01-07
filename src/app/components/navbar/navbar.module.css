@@ -1,0 +1,25 @@
+.main_container {
+  grid-area: navbar;
+  width: 30%;
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-size: 1rem;
+  font-family: var(--font-geist-sans);
+}
+
+.item:hover {
+  font-weight: 700;
+  color: #fff;
+}
+
+.active {
+  color: #fff;
+  font-weight: 700;
+}

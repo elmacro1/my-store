@@ -1,5 +1,5 @@
 import InputComponent from "../input/input.component";
-import styles from "./searchbar.styles.module.css";
+import styles from "./searchbar.module.css";
 
 const SearchbarComponent = () => {
   const handleSubmit = async (formData: FormData) => {

@@ -1,4 +1,4 @@
-import styles from "./input.styles.module.css";
+import styles from "./input.module.css";
 
 type InputType = "text" | "password" | "email" | "number" | "tel" | "url";
 

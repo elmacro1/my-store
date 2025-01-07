@@ -2,9 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 import SearchbarComponent from "../common/searchbar/searchbar.component";
+import NavbarComponent from "../navbar/navbar.component";
 import shoppingCartIcon from "@/app/assets/icons/shopping-cart.svg";
 import burgerIcon from "@/app/assets/icons/burger-menu.svg";
-import styles from "./header.styles.module.css";
+import styles from "./header.module.css";
 
 const HeaderComponent = () => (
   <header className={styles.main_container}>
@@ -29,6 +30,7 @@ const HeaderComponent = () => (
         width={24}
         height={24}
       />
+      <NavbarComponent />
     </div>
   </header>
 );
