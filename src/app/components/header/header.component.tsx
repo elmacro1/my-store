@@ -3,8 +3,8 @@ import Image from "next/image";
 
 import SearchbarComponent from "../common/searchbar/searchbar.component";
 import NavbarComponent from "../navbar/navbar.component";
-import shoppingCartIcon from "@/app/assets/icons/shopping-cart.svg";
-import burgerIcon from "@/app/assets/icons/burger-menu.svg";
+import shoppingCartIcon from "@/assets/icons/shopping-cart.svg";
+import burgerIcon from "@/assets/icons/burger-menu.svg";
 import styles from "./header.module.css";
 
 const HeaderComponent = () => (
