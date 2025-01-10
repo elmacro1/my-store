@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import SearchbarComponent from "../common/searchbar/searchbar.component";
-import NavbarComponent from "../navbar/navbar.component";
+import SearchbarComponent from "../common/searchbar/searchbar";
+import NavbarComponent from "../navbar/navbar";
 import styles from "./header.module.css";
 
 const HeaderComponent = () => (

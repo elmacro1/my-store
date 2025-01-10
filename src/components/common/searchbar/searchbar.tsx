@@ -1,4 +1,4 @@
-import InputComponent from "../input/input.component";
+import InputComponent from "../input/input";
 import styles from "./searchbar.module.css";
 
 const SearchbarComponent = () => {
