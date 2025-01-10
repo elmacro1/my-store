@@ -10,13 +10,9 @@
 .content_container {
   max-width: 1280px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.25fr 0.5fr 0.25fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "title search shopping_cart"
-    "navbar navbar navbar";
-  justify-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -25,28 +21,10 @@
   cursor: pointer;
   transition: scale 0.1s;
   font-size: 2.5rem;
-  grid-area: title;
   font-family: var(--font-geist-sans);
 }
 
 .title:hover {
-  scale: 1.2;
-}
-
-.searchbar_container {
-  width: 100%;
-  grid-area: search;
-}
-
-.shopping_cart_icon {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(5%) saturate(21%)
-    hue-rotate(132deg) brightness(103%) contrast(107%);
-  cursor: pointer;
-  transition: scale 0.1s;
-  grid-area: shopping_cart;
-}
-
-.shopping_cart_icon:hover {
   scale: 1.2;
 }
 
@@ -61,25 +39,5 @@
 
   .main_container {
     padding: 0.8rem 1.2rem;
-  }
-
-  .shopping_cart_icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .burger_icon {
-    cursor: pointer;
-    display: block;
-    grid-area: burger;
-    filter: brightness(0) saturate(100%) invert(100%) sepia(5%) saturate(21%)
-      hue-rotate(132deg) brightness(103%) contrast(107%);
-  }
-
-  .content_container {
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "burger title shopping_cart"
-      "search search search";
   }
 }
