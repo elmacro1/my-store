@@ -50,7 +50,6 @@ export const metadata: Metadata = {
     title: "OM - Moda Única",
     description:
       "Encuentra la mejor ropa deportiva en OM - Moda Única. Estilo y comodidad en un solo lugar.",
-    images: ["https://www.ommodaunica.com/twitter-image.jpg"],
   },
 };
 

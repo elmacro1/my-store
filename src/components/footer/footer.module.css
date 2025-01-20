@@ -1,15 +1,122 @@
 .main_container {
   width: 100%;
   padding-block: 1rem;
-  border-top: 1px solid #f0f0f0;
   background-color: #222;
   margin-top: auto;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .content_container {
   max-width: 1280px;
-  border: 1px solid red;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.title {
+  color: #f0f0f0;
+  font-size: 2.5rem;
+  font-family: var(--font-geist-sans);
+  font-weight: normal;
+}
+
+.items_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item_navigation {
+  font-family: var(--font-geist-sans);
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.contact_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.social_networks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section_title {
+  font-family: var(--font-geist-sans);
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
+.contact_details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact_items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item_contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f0f0f0;
+  font-family: var(--font-geist-sans);
+  font-size: 0.75rem;
+}
+
+.copyright {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.copyright_title {
+  color: #f0f0f0;
+  font-size: 1rem;
+  font-family: var(--font-geist-sans);
+}
+
+.copyright_link {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (width < 768px) {
+  .content_container {
+    flex-direction: column;
+    padding-inline: 1.2rem;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .section_title {
+    font-size: 1rem;
+  }
+
+  .copyright_title {
+    font-size: 0.75rem;
+  }
 }
