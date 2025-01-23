@@ -20,7 +20,7 @@
   cursor: pointer;
   transition: scale 0.1s;
   font-size: 2.5rem;
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-primary);
 }
 
 .title:hover {

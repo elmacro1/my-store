@@ -1,0 +1,38 @@
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.content_container {
+  width: 100%;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.3fr;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.filters_container {
+  height: 1000px;
+  border: 1px solid red;
+}
+
+.sort_container {
+  height: 1000px;
+  border: 1px solid green;
+}
+
+@media (width < 768px) {
+  .content_container {
+    grid-template-columns: 1fr;
+  }
+  .filters_container {
+    display: none;
+  }
+
+  .sort_container {
+    display: none;
+  }
+}

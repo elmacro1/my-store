@@ -1,0 +1,31 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter_title {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.filter_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 8px;
+}
+
+.filter_item {
+  list-style: none;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  color: #222;
+}
+
+.filter_item:hover {
+  color: #444;
+  font-weight: bold;
+}

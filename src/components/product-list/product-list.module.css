@@ -1,0 +1,13 @@
+.main_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+@media (width < 768) {
+  .main_container {
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

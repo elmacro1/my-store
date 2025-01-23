@@ -18,7 +18,7 @@
   cursor: pointer;
   transition: all 0.1s;
   font-size: 1rem;
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-primary);
 }
 
 .item:hover {
@@ -60,7 +60,7 @@
 
   .overlay {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #000;
     width: 100%;
     height: 100%;
     top: 0;

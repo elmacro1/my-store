@@ -6,13 +6,13 @@ import Header from "@/components/header/header";
 import AdvertisingSlider from "@/components/advertising-slider/advertising-slider";
 import Footer from "@/components/footer/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const primaryFont = Geist({
+  variable: "--font-primary",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const secondaryFont = Geist_Mono({
+  variable: "--font-secondary",
   subsets: ["latin"],
 });
 
@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${primaryFont.variable} ${secondaryFont.variable}`}>
         <Header />
         <AdvertisingSlider />
         {children}
