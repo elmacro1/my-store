@@ -3,7 +3,6 @@ interface Props {
 }
 
 const page = ({ product }: Props) => {
-  console.log({ product });
   return (
     <div>
       <h1>{product}</h1>
