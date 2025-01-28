@@ -1,0 +1,19 @@
+.main_container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.content_container {
+  max-width: 1280px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.product_image {
+  border-radius: 1rem;
+  width: 50%;
+  height: auto;
+}

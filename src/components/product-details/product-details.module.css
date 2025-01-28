@@ -1,0 +1,32 @@
+.main_container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 1rem;
+}
+
+.product_name {
+  font-family: var(--font-primary);
+  color: #222;
+  font-size: 2.5rem;
+}
+
+.product_price {
+  font-family: var(--font-secondary);
+  color: #222;
+  font-size: 1.25rem;
+}
+
+.product_description {
+  font-family: var(--font-primary);
+  color: #222;
+  font-size: 1.25rem;
+}
