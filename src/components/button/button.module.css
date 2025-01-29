@@ -2,14 +2,22 @@
   background-color: transparent;
   border: none;
   outline: 1px solid #c4c4c4;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   padding: 1rem;
   cursor: pointer;
   font-family: var(--font-primary);
   font-size: 1.25rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
   background-color: rgba(0, 0, 0, 0.05);
   outline-color: #222;
+}
+
+@media (width < 768px) {
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 }

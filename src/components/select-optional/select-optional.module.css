@@ -25,6 +25,7 @@
   padding: 0.5rem;
   cursor: pointer;
   font-family: var(--font-secondary);
+  font-size: 1rem;
   color: #222;
 }
 
@@ -32,4 +33,14 @@
 .selected {
   outline-color: #222;
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (width < 768px) {
+  .option_title {
+    font-size: 0.75rem;
+  }
+
+  .option_item {
+    font-size: 0.75rem;
+  }
 }
