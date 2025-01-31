@@ -1,0 +1,70 @@
+.main_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: 1px solid #c4c4c4;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+}
+
+.button_open {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline-color: #222;
+}
+
+.chevron_icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.chevron_icon_open {
+  transform: rotate(180deg);
+}
+
+.filter_list {
+  width: 100%;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 46px;
+  max-height: 0;
+  z-index: -10;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.filter_list_open {
+  max-height: 1000px;
+  z-index: 10;
+  background-color: #fff;
+  outline: 1px solid #222;
+}
+
+.filter_item {
+  list-style: none;
+  padding: 0.5rem;
+  font-family: var(--font-primary);
+  color: #222;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.filter_item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
