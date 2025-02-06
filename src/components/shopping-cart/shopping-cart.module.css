@@ -40,3 +40,17 @@
   font-family: var(--font-primary);
   margin: auto;
 }
+
+@media (width < 768px) {
+  .main_container {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .label_empty {
+    font-size: 1.5rem;
+  }
+}
