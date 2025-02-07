@@ -4,10 +4,6 @@ import ProductDetails from "@/components/product-details/product-details";
 import productImage from "@/assets/images/IMG_9024.jpg";
 import styles from "./page.module.css";
 
-interface Props {
-  product: string;
-}
-
 const optionals = [
   {
     title: "color",
@@ -31,8 +27,7 @@ const optionals = [
 
 const description = "Top tira ancha, 100% algodón con lycra.";
 
-const page = ({ product }: Props) => {
-  console.log({ product });
+const page = () => {
   return (
     <div className={styles.main_container}>
       <div className={styles.content_container}>
