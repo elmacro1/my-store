@@ -1,58 +1,69 @@
 import nodemailer from "nodemailer";
 import { redirect } from "next/navigation";
 
-import EmailTemplate from "../email-template/email-template";
 import Button from "../button/button";
 import InputComponent from "../common/input/input";
 import styles from "./contact-form.module.css";
 
+const senderEmail = process.env.EMAIL;
+const senderEmailPassword = process.env.EMAIL_PASSWORD;
+
 interface Props {
   success: boolean;
+  error: boolean;
 }
 
-const ContactForm = ({ success }: Props) => {
+const ContactForm = ({ success, error }: Props) => {
   const handleAction = async (formData: FormData) => {
     "use server";
 
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const message = formData.get("message");
+    const name = formData.get("name")!.toString();
+    const email = formData.get("email")!.toString();
+    const phone = formData.get("phone")!.toString();
+    const message = formData.get("message")!.toString();
 
-    console.log({ name, email, phone, message });
+    if (!name && !email && !phone && !message) return;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "tu-email@gmail.com", // Tu dirección de correo
-        pass: "tu-contraseña-o-contraseña-de-aplicación", // IMPORTANTE: Usa una contraseña de aplicación
+        user: senderEmail,
+        pass: senderEmailPassword,
       },
     });
 
-    // Configurar el correo
-    const mailOptions = {
-      from: "tu-email@gmail.com",
-      to: "destinatario@example.com",
-      subject: "¡Hola desde Node.js!",
-      text: "Este es un correo enviado con Nodemailer y Gmail.",
-    };
+    try {
+      await transporter.sendMail({
+        from: senderEmail,
+        to: "om.modaunica@gmail.com",
+        subject: "Página web - Formulario de contacto",
+        html: `<h2>Hola! mi nombre es: ${name}</h2>
+               <p>Este es mi mail: ${email}</p>
+               <p>Mi número de teléfono: ${phone}</p>
+               <p>Me comunico desde la página web.</p>
+               <p>Y este es mi mensaje: <strong>${message}</strong></p>
+        `,
+      });
+    } catch (error) {
+      console.log("An error when sending mail: ", error);
+      redirect("/contacto?error=true");
+    }
 
-    // Enviar el correo
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log("Error al enviar el correo:", error);
-      } else {
-        console.log("Correo enviado:", info.response);
-      }
-    });
     redirect("/contacto?success=true");
   };
 
   return (
     <form className={styles.main_container} action={handleAction}>
-      <p className={styles.success_flag}>
-        ¡Gracias por contactarnos! A la brevedad nos comunicamos con vos.
-      </p>
+      {success && (
+        <p className={styles.success_flag}>
+          ¡Gracias por contactarnos! A la brevedad nos comunicamos con vos.
+        </p>
+      )}
+      {error && (
+        <p className={styles.error_flag}>
+          ¡Ups! Intentalo de nuevo en unos minutos.
+        </p>
+      )}
       <div className={styles.input_container}>
         <p className={styles.input_title}>Nombre</p>
         <InputComponent
@@ -60,6 +71,7 @@ const ContactForm = ({ success }: Props) => {
           name="name"
           placeholder="Marco Galván"
           type="text"
+          required={true}
         />
       </div>
       <div className={styles.input_container}>
@@ -69,6 +81,7 @@ const ContactForm = ({ success }: Props) => {
           name="email"
           placeholder="email@email.com"
           type="email"
+          required={true}
         />
       </div>
       <div className={styles.input_container}>
@@ -78,6 +91,7 @@ const ContactForm = ({ success }: Props) => {
           name="phone"
           placeholder="3855123456"
           type="tel"
+          required={true}
         />
       </div>
       <div className={styles.input_container}>
@@ -87,6 +101,7 @@ const ContactForm = ({ success }: Props) => {
           name="message"
           placeholder="Escribe un mensaje..."
           type="textarea"
+          required={true}
         />
       </div>
       <Button label="Enviar" />

@@ -8,6 +8,7 @@ const InputServerComponent = ({
   name,
   autocomplete = "off",
   customClass,
+  required = false,
 }: InputProps) =>
   type === "textarea" ? (
     <textarea
@@ -15,6 +16,7 @@ const InputServerComponent = ({
       placeholder={placeholder}
       name={name}
       autoComplete={autocomplete}
+      required={required}
     ></textarea>
   ) : (
     <input
@@ -23,6 +25,7 @@ const InputServerComponent = ({
       type={type}
       name={name}
       autoComplete={autocomplete}
+      required={required}
     ></input>
   );
 
@@ -34,6 +37,7 @@ const InputComponent = ({
   onChange,
   value,
   customClass = "",
+  required = false,
 }: InputProps) => {
   return onChange ? (
     <InputClientComponent
@@ -44,6 +48,7 @@ const InputComponent = ({
       onChange={onChange}
       value={value}
       customClass={customClass}
+      required={required}
     />
   ) : (
     <InputServerComponent
@@ -52,6 +57,7 @@ const InputComponent = ({
       type={type}
       autocomplete={autocomplete}
       customClass={customClass}
+      required={required}
     />
   );
 };

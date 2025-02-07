@@ -9,6 +9,7 @@ const InputClientComponent = ({
   onChange,
   value,
   customClass,
+  required = false,
 }: InputProps) =>
   type === "textarea" ? (
     <textarea
@@ -18,6 +19,7 @@ const InputClientComponent = ({
       autoComplete={autocomplete}
       onChange={(event) => onChange!(event.target.value)}
       value={value}
+      required={required}
     ></textarea>
   ) : (
     <input
@@ -28,6 +30,7 @@ const InputClientComponent = ({
       autoComplete={autocomplete}
       onChange={(event) => onChange!(event.target.value)}
       value={value}
+      required={required}
     ></input>
   );
 
