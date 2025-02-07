@@ -1,15 +1,30 @@
+import type { InputProps } from "@/models/input.model";
 import styles from "./input.module.css";
+import InputClientComponent from "./input.client";
 
-type InputType = "text" | "password" | "email" | "number" | "tel" | "url";
-
-interface Props {
-  placeholder: string;
-  type: InputType;
-  name: string;
-  autocomplete?: string;
-  onChange: (value: string) => void;
-  value: string;
-}
+const InputServerComponent = ({
+  placeholder,
+  type,
+  name,
+  autocomplete = "off",
+  customClass,
+}: InputProps) =>
+  type === "textarea" ? (
+    <textarea
+      className={`${styles.main_container} ${customClass}`}
+      placeholder={placeholder}
+      name={name}
+      autoComplete={autocomplete}
+    ></textarea>
+  ) : (
+    <input
+      className={`${styles.main_container} ${customClass}`}
+      placeholder={placeholder}
+      type={type}
+      name={name}
+      autoComplete={autocomplete}
+    ></input>
+  );
 
 const InputComponent = ({
   placeholder,
@@ -18,16 +33,27 @@ const InputComponent = ({
   autocomplete = "",
   onChange,
   value,
-}: Props) => (
-  <input
-    className={styles.main_container}
-    placeholder={placeholder}
-    type={type}
-    name={name}
-    autoComplete={autocomplete}
-    onChange={(event) => onChange(event.target.value)}
-    value={value}
-  ></input>
-);
+  customClass = "",
+}: InputProps) => {
+  return onChange ? (
+    <InputClientComponent
+      name={name}
+      placeholder={placeholder}
+      type={type}
+      autocomplete={autocomplete}
+      onChange={onChange}
+      value={value}
+      customClass={customClass}
+    />
+  ) : (
+    <InputServerComponent
+      name={name}
+      placeholder={placeholder}
+      type={type}
+      autocomplete={autocomplete}
+      customClass={customClass}
+    />
+  );
+};
 
 export default InputComponent;

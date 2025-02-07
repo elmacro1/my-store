@@ -2,7 +2,7 @@ import styles from "./button.module.css";
 
 interface Props {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
   customClass?: string;
 }
 

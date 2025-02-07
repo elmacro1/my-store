@@ -43,7 +43,6 @@ const SearchbarComponent = () => {
         name="search"
         placeholder="Busca productos..."
         type="text"
-        autocomplete="off"
         onChange={handleChange}
         value={searchValue}
       />

@@ -8,6 +8,7 @@
   font-family: var(--font-primary);
   font-size: 1.25rem;
   transition: all 0.2s ease-in-out;
+  color: #222;
 }
 
 .button:hover {
