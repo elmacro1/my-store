@@ -42,16 +42,16 @@
   position: absolute;
   top: 46px;
   max-height: 0;
-  z-index: -10;
-  transition: all 0.2s ease-in-out;
+  z-index: 10;
   overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+  outline: 1px solid transparent;
 }
 
 .filter_list_open {
   max-height: 1000px;
-  z-index: 10;
-  background-color: #fff;
-  outline: 1px solid #222;
+  outline-color: #222;
 }
 
 .filter_item {

@@ -42,9 +42,32 @@ const FilterMobile = ({ title, filters, tag }: Props) => {
     setSelected(getSelected());
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    const button = document.getElementById(`dropdown-button-${tag}`);
+    const menu = document.getElementById(`dropdown-menu-${tag}`);
+
+    if (
+      button &&
+      menu &&
+      event.target instanceof Node &&
+      !button.contains(event.target) &&
+      !menu.contains(event.target)
+    ) {
+      setIsOpen(false);
+    }
+  };
+
   useEffect(() => {
     onParamsChange();
   }, [searchParams]);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
 
   return (
     <div className={styles.main_container}>
@@ -52,6 +75,7 @@ const FilterMobile = ({ title, filters, tag }: Props) => {
         type="button"
         onClick={handleDropdown}
         className={`${styles.button} ${isOpen ? styles.button_open : ""}`}
+        id={`dropdown-button-${tag}`}
       >
         {selected}
         <Image
@@ -69,6 +93,7 @@ const FilterMobile = ({ title, filters, tag }: Props) => {
         className={`${styles.filter_list} ${
           isOpen ? styles.filter_list_open : ""
         }`}
+        id={`dropdown-menu-${tag}`}
       >
         {filters.map((item, index) => (
           <li
