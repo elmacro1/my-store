@@ -13,7 +13,7 @@ const ContactDetails = () => (
         Hola! Somos <strong>OM - Moda Única</strong>. Vendemos la mejor calidad
         en indumentaria deportiva <strong>AL MEJOR PRECIO!</strong>
       </p>
-      <p className={styles.description}>Hace tu pedido y pagalo online!</p>
+      <p className={styles.description}>Hace tu pedido online!</p>
     </div>
     <div className={styles.contact_links}>
       <Link

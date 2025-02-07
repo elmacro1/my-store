@@ -1,11 +1,4 @@
-type InputType =
-  | "text"
-  | "password"
-  | "email"
-  | "number"
-  | "tel"
-  | "url"
-  | "textarea";
+type InputType = "text" | "password" | "email" | "number" | "url" | "textarea";
 
 export interface InputProps {
   placeholder: string;

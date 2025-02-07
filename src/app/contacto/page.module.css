@@ -14,11 +14,25 @@
 
 .title {
   font-family: var(--font-primary);
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .contact_info {
   display: flex;
   gap: 2rem;
   justify-content: space-between;
+}
+
+@media (width < 768px) {
+  .content_container {
+    gap: 1rem;
+  }
+
+  .contact_info {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
 }

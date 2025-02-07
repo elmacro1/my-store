@@ -37,9 +37,9 @@ const ContactForm = ({ success, error }: Props) => {
         from: senderEmail,
         to: "om.modaunica@gmail.com",
         subject: "Página web - Formulario de contacto",
-        html: `<h2>Hola! mi nombre es: ${name}</h2>
-               <p>Este es mi mail: ${email}</p>
-               <p>Mi número de teléfono: ${phone}</p>
+        html: `<h2>Hola! mi nombre es: <strong>${name}</strong></h2>
+               <p>Este es mi mail: <strong>${email}</strong></p>
+               <p>Mi número de teléfono: <strong>${phone}</strong></p>
                <p>Me comunico desde la página web.</p>
                <p>Y este es mi mensaje: <strong>${message}</strong></p>
         `,
@@ -90,7 +90,7 @@ const ContactForm = ({ success, error }: Props) => {
           customClass={styles.input_field}
           name="phone"
           placeholder="3855123456"
-          type="tel"
+          type="number"
           required={true}
         />
       </div>

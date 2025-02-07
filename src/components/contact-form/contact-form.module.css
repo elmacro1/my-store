@@ -41,3 +41,13 @@
 .input_field:focus-within {
   outline-color: #222;
 }
+
+@media (width < 768px) {
+  .main_container {
+    width: 100%;
+  }
+
+  .input_title {
+    font-size: 0.75rem;
+  }
+}

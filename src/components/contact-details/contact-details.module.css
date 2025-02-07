@@ -5,6 +5,12 @@
   width: 50%;
 }
 
+.description_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .description {
   font-family: var(--font-primary);
   font-size: 1rem;
@@ -28,4 +34,23 @@
 .icon {
   filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%)
     hue-rotate(327deg) brightness(96%) contrast(104%);
+}
+
+@media (width < 768px) {
+  .main_container {
+    width: 100%;
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+
+  .item_contact {
+    font-size: 0.75rem;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
 }
