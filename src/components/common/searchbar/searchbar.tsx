@@ -1,50 +1,24 @@
-"use client";
-
-import { FormEvent, useState, useEffect } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import InputComponent from "../input/input";
 import styles from "./searchbar.module.css";
 
 const SearchbarComponent = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
+  const actionSubmit = async (formData: FormData) => {
+    "use server";
 
-  const handleChange = (term: string) => setSearchValue(term);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    const searchValue = formData.get("search");
     if (!searchValue) return;
 
-    const params = new URLSearchParams(searchParams);
-    params.set("query", searchValue);
-
-    router.push(`/productos?${params.toString()}`);
+    redirect(`/productos?query=${searchValue}`);
   };
-
-  const onInit = () => {
-    const query = searchParams.get("query") || "";
-    setSearchValue(query);
-  };
-
-  useEffect(() => {
-    onInit();
-  }, []);
-
-  useEffect(() => {
-    if (pathname !== "/productos") setSearchValue("");
-  }, [pathname]);
 
   return (
-    <form className={styles.main_container} onSubmit={handleSubmit}>
+    <form className={styles.main_container} action={actionSubmit}>
       <InputComponent
         name="search"
         placeholder="Busca productos..."
         type="text"
-        onChange={handleChange}
-        value={searchValue}
       />
     </form>
   );

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 
 import ProductDetails from "@/components/product-details/product-details";
@@ -27,7 +28,7 @@ const optionals = [
 
 const description = "Top tira ancha, 100% algodón con lycra.";
 
-const page = () => {
+const ProductPage = () => {
   return (
     <div className={styles.main_container}>
       <div className={styles.content_container}>
@@ -39,10 +40,12 @@ const page = () => {
           width={500}
           height={500}
         />
-        <ProductDetails optionals={optionals} description={description} />
+        <Suspense>
+          <ProductDetails optionals={optionals} description={description} />
+        </Suspense>
       </div>
     </div>
   );
 };
 
-export default page;
+export default ProductPage;

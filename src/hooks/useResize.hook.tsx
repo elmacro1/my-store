@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 export const useResize = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleResize = () => {
-    setWidth(window.innerWidth);
+    setIsMobile(() => window.innerWidth <= 768);
   };
 
   useEffect(() => {
@@ -17,7 +17,5 @@ export const useResize = () => {
     };
   }, []);
 
-  const isMobile = width <= 768;
-
-  return { width, isMobile };
+  return { isMobile };
 };

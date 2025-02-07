@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import FiltersMobileContainer from "@/components/filters-mobile-container/filters-mobile-container";
 import FilterBar from "@/components/filter-bar/filter-bar";
 import ProductList from "@/components/product-list/product-list";
@@ -45,10 +47,12 @@ const ProductosPage = () => {
   return (
     <main className={styles.main_container}>
       <div className={styles.content_container}>
-        <FiltersMobileContainer />
-        <FilterBar filters={categories} tag="categorie" title="Categorias" />
-        <ProductList />
-        <FilterBar filters={orderBy} tag="sort" title="Ordenar por" />
+        <Suspense>
+          <FiltersMobileContainer />
+          <FilterBar filters={categories} tag="categorie" title="Categorias" />
+          <ProductList />
+          <FilterBar filters={orderBy} tag="sort" title="Ordenar por" />
+        </Suspense>
       </div>
     </main>
   );
