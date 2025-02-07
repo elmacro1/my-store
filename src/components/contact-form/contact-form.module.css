@@ -5,6 +5,15 @@
   gap: 0.75rem;
 }
 
+.success_flag {
+  color: green;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  outline: 1px solid green;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
 .input_container {
   display: flex;
   flex-direction: column;
@@ -12,7 +21,7 @@
 }
 
 .input_title {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 1rem;
 }
 

@@ -24,7 +24,7 @@
   border-radius: 0.25rem;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 1rem;
   color: #222;
 }

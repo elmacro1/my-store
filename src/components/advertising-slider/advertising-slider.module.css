@@ -1,7 +1,7 @@
 .main_container {
   padding-block: 0.5rem;
   background-color: #c4c4c4;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-weight: 700;
   display: flex;
   align-items: center;

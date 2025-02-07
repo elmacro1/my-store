@@ -20,7 +20,7 @@
 }
 
 .product_price {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   color: #222;
   font-size: 1.25rem;
 }

@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header/header";
 import AdvertisingSlider from "@/components/advertising-slider/advertising-slider";
 import Footer from "@/components/footer/footer";
 
-const primaryFont = Geist({
+const primaryFont = Inter({
   variable: "--font-primary",
-  subsets: ["latin"],
-});
-
-const secondaryFont = Geist_Mono({
-  variable: "--font-secondary",
   subsets: ["latin"],
 });
 
@@ -60,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${primaryFont.variable} ${secondaryFont.variable}`}>
+      <body className={primaryFont.variable}>
         <Header />
         <AdvertisingSlider />
         {children}

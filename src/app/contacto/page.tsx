@@ -5,8 +5,11 @@ import styles from "./page.module.css";
 const ContactoPage = () => (
   <main className={styles.main_container}>
     <div className={styles.content_container}>
-      <ContactDetails />
-      <ContactForm />
+      <h2 className={styles.title}>Contacto</h2>
+      <div className={styles.contact_info}>
+        <ContactDetails />
+        <ContactForm />
+      </div>
     </div>
   </main>
 );
