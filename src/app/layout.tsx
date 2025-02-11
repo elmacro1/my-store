@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import Header from "@/components/header/header";
-import AdvertisingSlider from "@/components/advertising-slider/advertising-slider";
-import Footer from "@/components/footer/footer";
-
 const primaryFont = Inter({
   variable: "--font-primary",
   subsets: ["latin"],
@@ -55,12 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={primaryFont.variable}>
-        <Header />
-        <AdvertisingSlider />
-        {children}
-        <Footer />
-      </body>
+      <body className={primaryFont.variable}>{children}</body>
     </html>
   );
 }
