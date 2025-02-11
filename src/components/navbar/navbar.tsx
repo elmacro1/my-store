@@ -8,12 +8,17 @@ import { usePathname } from "next/navigation";
 import ShoppingCart from "../shopping-cart/shopping-cart";
 import Button from "../button/button";
 import { useResize } from "@/hooks/useResize.hook";
-import { navItems } from "@/constants/navbar";
+import { NavItem } from "@/models/navbar.model";
 import burgerIcon from "@/assets/icons/burger-menu.svg";
 import shoppingCartIcon from "@/assets/icons/shopping-cart.svg";
 import styles from "./navbar.module.css";
 
-const NavbarComponent = () => {
+interface Props {
+  isAdmin: boolean;
+  navItems: NavItem[];
+}
+
+const NavbarComponent = ({ isAdmin, navItems }: Props) => {
   const [slideMenuIsOpen, setSlideMenuIsOpen] = useState(false);
   const [shoppingCartIsOpen, setShoppingCartIsOpen] = useState(false);
   const { isMobile } = useResize();
@@ -58,14 +63,22 @@ const NavbarComponent = () => {
           />
         )}
       </div>
-      <Image
-        src={shoppingCartIcon}
-        alt="shopping icon"
-        className={styles.shopping_cart_icon}
-        width={24}
-        height={24}
-        onClick={openSlideShoppingCart}
-      />
+      {!isAdmin && (
+        <>
+          <Image
+            src={shoppingCartIcon}
+            alt="shopping icon"
+            className={styles.shopping_cart_icon}
+            width={24}
+            height={24}
+            onClick={openSlideShoppingCart}
+          />
+          <ShoppingCart
+            isOpen={shoppingCartIsOpen}
+            closeSlide={closeSlideShoppingCart}
+          />
+        </>
+      )}
       <Image
         src={burgerIcon}
         alt="burger icon"
@@ -73,10 +86,6 @@ const NavbarComponent = () => {
         height={20}
         className={styles.burger_icon}
         onClick={openSlideMenu}
-      />
-      <ShoppingCart
-        isOpen={shoppingCartIsOpen}
-        closeSlide={closeSlideShoppingCart}
       />
     </nav>
   );

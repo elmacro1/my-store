@@ -1,7 +1,10 @@
+import AdminHeader from "@/components/admin-header/admin-header";
 import styles from "./page.module.css";
 
-const AdminPage = () => {
-  return <main className={styles.main_container}>AdminPage</main>;
-};
+const AdminPage = () => (
+  <main className={styles.main_container}>
+    <AdminHeader />
+  </main>
+);
 
 export default AdminPage;

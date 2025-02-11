@@ -1,0 +1,42 @@
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  background-color: #222;
+}
+
+.content_container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: scale 0.1s;
+  font-size: 2.5rem;
+  font-family: var(--font-primary);
+}
+
+.title:hover {
+  scale: 1.2;
+}
+
+.burger_icon {
+  display: none;
+}
+
+@media (width < 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .main_container {
+    padding: 0.8rem 1.2rem;
+  }
+}

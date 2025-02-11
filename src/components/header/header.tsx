@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import SearchbarComponent from "../common/searchbar/searchbar";
 import NavbarComponent from "../navbar/navbar";
+import { navItems } from "@/constants/navbar";
 import styles from "./header.module.css";
 
 const Header = () => (
@@ -11,7 +12,7 @@ const Header = () => (
         OM
       </Link>
       <SearchbarComponent />
-      <NavbarComponent />
+      <NavbarComponent isAdmin={false} navItems={navItems} />
     </div>
   </header>
 );
