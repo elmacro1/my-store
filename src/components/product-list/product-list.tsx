@@ -1,16 +1,16 @@
+import { Product } from "@/models/product.model";
 import ProductCard from "../product-card/product-card";
 import styles from "./product-list.module.css";
 
-const ProductList = () => (
+interface Props {
+  products: Product[];
+}
+
+const ProductList = ({ products }: Props) => (
   <div className={styles.main_container}>
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
+    {products.map((product) => (
+      <ProductCard key={product.id} product={product} />
+    ))}
   </div>
 );
 

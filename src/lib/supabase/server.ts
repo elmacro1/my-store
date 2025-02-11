@@ -25,3 +25,10 @@ export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
     }
   );
 };
+
+export const supabaseClient = async () => {
+  const cookieStore = await cookies();
+  const supabase = createClient(cookieStore);
+
+  return supabase;
+};

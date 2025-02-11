@@ -1,48 +1,15 @@
 import { Suspense } from "react";
 
+import { getProducts, getCategories } from "@/lib/actions";
+import { orderBy } from "@/constants/order-by";
 import FiltersMobileContainer from "@/components/filters-mobile-container/filters-mobile-container";
 import FilterBar from "@/components/filter-bar/filter-bar";
 import ProductList from "@/components/product-list/product-list";
 import styles from "./page.module.css";
 
-const ProductosPage = () => {
-  const categories = [
-    {
-      label: "Todas",
-      value: "todas",
-    },
-    {
-      label: "Hogar",
-      value: "hogar",
-    },
-    {
-      label: "Tecnología",
-      value: "tecnología",
-    },
-    {
-      label: "Moda",
-      value: "moda",
-    },
-    {
-      label: "Deportes",
-      value: "deportes",
-    },
-  ];
-
-  const orderBy = [
-    {
-      label: "Más recientes",
-      value: "recientes",
-    },
-    {
-      label: "Precio: Menor a mayor",
-      value: "menor",
-    },
-    {
-      label: "Precio: Mayor a menor",
-      value: "mayor",
-    },
-  ];
+const ProductosPage = async () => {
+  const products = await getProducts();
+  const categories = await getCategories();
 
   return (
     <main className={styles.main_container}>
@@ -50,7 +17,7 @@ const ProductosPage = () => {
         <Suspense>
           <FiltersMobileContainer />
           <FilterBar filters={categories} tag="categorie" title="Categorias" />
-          <ProductList />
+          <ProductList products={products} />
           <FilterBar filters={orderBy} tag="sort" title="Ordenar por" />
         </Suspense>
       </div>
